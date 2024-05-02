@@ -1,0 +1,260 @@
+{
+  "S11": [
+    {
+      "CourseCode": "CSE-1101",
+      "CourseTitle": "Introduction to Computer",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1101",
+      "courseTeacher": "Dr. Md. Abu Layek"
+    },
+    {
+      "CourseCode": "CSE-1102",
+      "CourseTitle": "Structured Programming Language",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1102",
+      "courseTeacher": "Dr. Md. Zulfiker Mahmud"
+    },
+    {
+      "CourseCode": "CSEL-1103",
+      "CourseTitle": "Structured Programming Language Lab",
+      "CourseType": "Major",
+      "Marks": 50,
+      "Credit": 1.5,
+      "code": "CC1103",
+      "courseTeacher": "Dr. Md. Zulfiker Mahmud"
+    },
+    {
+      "CourseCode": "CSER-1104",
+      "CourseTitle": "Math-I (Calculus)",
+      "CourseType": "Non-Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1104",
+      "courseTeacher": "Md. Asraful Islam"
+    },
+    {
+      "CourseCode": "CSER-1105",
+      "CourseTitle": "Physics",
+      "CourseType": "Non-Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1105",
+      "courseTeacher": "Dr. Abdulla Al-Momin"
+    },
+    {
+      "CourseCode": "CSE-1106",
+      "CourseTitle": "Electrical Circuit Analysis",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1106",
+      "courseTeacher": "Dr. Uzzal Kumar Acharjee"
+    },
+    {
+      "CourseCode": "CSEL-1107",
+      "CourseTitle": "Electrical Circuit Analysis Lab",
+      "CourseType": "Major",
+      "Marks": 50,
+      "Credit": 1.5,
+      "code": "CC1107",
+      "courseTeacher": "Tanvir Ahammad"
+    },
+    {
+      "CourseCode": "CSER-1108",
+      "CourseTitle": "English",
+      "CourseType": "Non-Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1108",
+      "courseTeacher": "Injamamul Sarwer"
+    },
+    {
+      "CourseCode": "CSER-1109",
+      "CourseTitle": "History of the Liberation War of Bangladesh",
+      "CourseType": "Non-Major",
+      "Marks": 50,
+      "Credit": 2,
+      "code": "CC1109",
+      "courseTeacher": "Umma Salma Hridoy"
+    }
+  ],
+  "S12": [
+    {
+      "CourseCode": "CSE-1201",
+      "CourseTitle": "Object Oriented Programming-I",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1201",
+      "courseTeacher": "Dr. Md. Aminul Islam"
+    },
+    {
+      "CourseCode": "CSEL-1202",
+      "CourseTitle": "Object Oriented Programming-I Lab",
+      "CourseType": "Major",
+      "Marks": 50,
+      "Credit": 1.5,
+      "code": "CC1202",
+      "courseTeacher": "Dr. Md. Aminul Islam"
+    },
+    {
+      "CourseCode": "CSE-1203",
+      "CourseTitle": "Data structure",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1203",
+      "courseTeacher": "Arnisha Akhter"
+    },
+    {
+      "CourseCode": "CSEL-1204",
+      "CourseTitle": "Data structure Lab",
+      "CourseType": "Major",
+      "Marks": 50,
+      "Credit": 1,
+      "code": "CC1204",
+      "courseTeacher": "Arnisha Akhter"
+    },
+    {
+      "CourseCode": "CSE-1205",
+      "CourseTitle": "Basic Electronics",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1205",
+      "courseTeacher": "Dr. Uzzal Kumar Acharjee"
+    },
+    {
+      "CourseCode": "CSEL-1206",
+      "CourseTitle": "Basic Electronics Lab",
+      "CourseType": "Major",
+      "Marks": 50,
+      "Credit": 1,
+      "code": "CC1206",
+      "courseTeacher": "Dr. Uzzal Kumar Acharjee"
+    },
+    {
+      "CourseCode": "CSER-1207",
+      "CourseTitle": "Math- II (Linear Algebra)",
+      "CourseType": "Non-Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1207",
+      "courseTeacher": "Dr. Farhana Rashid"
+    },
+    {
+      "CourseCode": "CSE-1209",
+      "CourseTitle": "Discrete Mathematics",
+      "CourseType": "Major",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC1209",
+      "courseTeacher": "Dr. Selina Sharmin"
+    },
+    {
+      "CourseCode": "CSER-1211",
+      "CourseTitle": "Economics",
+      "CourseType": "Non-Major",
+      "Marks": 50,
+      "Credit": 2,
+      "code": "CC1211",
+      "courseTeacher": "Md Rabiul Karim"
+    },
+    {
+      "CourseCode": "CSEV-1212",
+      "CourseTitle": "Viva-Voce",
+      "CourseType": "Major",
+      "Marks": 50,
+      "Credit": 1,
+      "code": "CC1212",
+      "courseTeacher": "All Faculty Member"
+    }
+  ],
+  "S21": [
+    {
+      "CourseCode": "CSEL-2108",
+      "CourseTitle": "Data Communication Lab",
+      "CourseType": "Major",
+      "courseTeacher": "Nayeema Islam",
+      "Marks": 50,
+      "Credit": 1,
+      "code": "CC2108"
+    },
+    {
+      "CourseCode": "CSER-2109",
+      "CourseTitle": "Financial and Managerial Accounting",
+      "CourseType": "Non-Major",
+      "courseTeacher": "Dr. Omor Faruk",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC2109"
+    },
+    {
+      "CourseCode": "CSE-2103",
+      "CourseTitle": "Digital Logic Design",
+      "CourseType": "Major",
+      "courseTeacher": "Prof. Dr. Md. Nasir Uddin",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC2103"
+    },
+    {
+      "CourseCode": "CSE-2101",
+      "CourseTitle": "Object Oriented Programming-II",
+      "CourseType": "Major",
+      "courseTeacher": "Dr. Sajeeb Saha",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC2101"
+    },
+    {
+      "CourseCode": "CSER-2105",
+      "CourseTitle": "Math- III (Ordinary differential Equation)",
+      "CourseType": "Non-Major",
+      "courseTeacher": "Md. Ashraful Islam",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC2105"
+    },
+    {
+      "CourseCode": "CSEL-2102",
+      "CourseTitle": "Object Oriented Programming-II Lab",
+      "CourseType": "Major",
+      "courseTeacher": "Tanvir Ahammad",
+      "Marks": 50,
+      "Credit": 1.5,
+      "code": "CC2102"
+    },
+    {
+      "CourseCode": "CSE-2107",
+      "CourseTitle": "Data Communication",
+      "CourseType": "Major",
+      "courseTeacher": "Nayeema Islam",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC2107"
+    },
+    {
+      "CourseCode": "CSEL-2104",
+      "CourseTitle": "Digital Logic Design Lab",
+      "CourseType": "Major",
+      "courseTeacher": "Prof. Dr. Md. Nasir Uddin",
+      "Marks": 50,
+      "Credit": 1,
+      "code": "CC2104"
+    },
+    {
+      "CourseCode": "CSE-2106",
+      "CourseTitle": "Introduction to Statistic and Probability",
+      "CourseType": "Non-Major",
+      "courseTeacher": "Shahnaz Parvin",
+      "Marks": 100,
+      "Credit": 3,
+      "code": "CC2106"
+    }
+  ]
+}
