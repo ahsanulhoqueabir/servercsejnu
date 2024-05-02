@@ -1,8 +1,8 @@
 import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
+const port = process.env.port || 5000;
 import studentRoute from "./routes/students.js";
-const port = 5000;
 import dotenv from "dotenv";
 dotenv.config();
 
