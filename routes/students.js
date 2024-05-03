@@ -1,5 +1,6 @@
-import express from "express";
-import {
+// import express from "express";
+const express = require("express");
+const {
   getStudents,
   createStudent,
   allStudentsMail,
@@ -9,7 +10,7 @@ import {
   addNewField,
   addResult,
   getResult,
-} from "../controllers/StudentRouteController.js";
+} = require("../controllers/StudentRouteController.js");
 
 const router = express.Router();
 
@@ -23,4 +24,5 @@ router.put("/addNewField", addNewField);
 router.put("/result", addResult);
 router.get("/result", getResult);
 
-export default router;
+// export default router;
+module.exports =(router)

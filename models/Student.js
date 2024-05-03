@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const studentSchema = new mongoose.Schema(
   {
     serial: { type: String, required: true },
@@ -85,4 +86,4 @@ const studentSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Student", studentSchema, "cse13batch");
+module.exports = mongoose.model("Student", studentSchema, "cse13batch");

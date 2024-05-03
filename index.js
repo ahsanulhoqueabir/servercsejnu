@@ -1,9 +1,10 @@
-import cors from "cors";
-import express from "express";
-import mongoose from "mongoose";
+const cors = require("cors");
+const express = require("express");
+const mongoose = require("mongoose");
 const port = process.env.port || 5000;
-import studentRoute from "./routes/students.js";
-import dotenv from "dotenv";
+const studentRoute = require("./routes/students.js");
+// import dotenv from "dotenv";
+const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();

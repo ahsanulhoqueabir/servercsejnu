@@ -1,5 +1,5 @@
-import Students from "../models/Student.js";
-
+// import Students from "../models/Student.js";
+const Students = require("../models/Student.js");
 const projection = {
   id: 1,
   nickname: 1,
@@ -146,7 +146,7 @@ const getResult = async (req, res) => {
   }
 };
 
-export {
+module.exports = {
   createStudent,
   getStudents,
   allStudentsMail,
