@@ -3,6 +3,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const port = process.env.port || 5000;
 const studentRoute = require("./routes/students.js");
+const courseRoute = require("./routes/courses.js");
+const notesRoute = require("./routes/notes.js");
+const noticeRoute = require("./routes/notices.js");
 // import dotenv from "dotenv";
 const dotenv = require("dotenv");
 dotenv.config();
@@ -27,6 +30,9 @@ const connection = async () => {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use("/api/v1/students", studentRoute);
+app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/notes", notesRoute);
+app.use("/api/v1/notice", noticeRoute);
 
 app.listen(port, () => {
   connection();

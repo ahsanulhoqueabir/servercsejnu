@@ -55,14 +55,17 @@ const getStudents = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
-const allStudentsMail = async (req, res) => {
+
+const BasicInfo = async (req, res) => {
   try {
     const projection = {
       email: 1,
       name: 1,
       nickname: 1,
+      id: 1,
     };
-    const students = await Students.find({}, projection);
+    const query = req.query;
+    const students = await Students.find(query, projection);
     res.status(200).json(students);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -149,7 +152,7 @@ const getResult = async (req, res) => {
 module.exports = {
   createStudent,
   getStudents,
-  allStudentsMail,
+  BasicInfo,
   getSortedData,
   queryData,
   updateStudent,

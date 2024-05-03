@@ -1,9 +1,8 @@
-// import express from "express";
 const express = require("express");
 const {
   getStudents,
   createStudent,
-  allStudentsMail,
+  BasicInfo,
   getSortedData,
   queryData,
   updateStudent,
@@ -14,9 +13,8 @@ const {
 
 const router = express.Router();
 
-// router.get("/", getStudents);
 router.post("/", createStudent);
-router.get("/getStudentsMail", allStudentsMail);
+router.get("/basicinfo", BasicInfo);
 router.get("/allstudents", getSortedData);
 router.get("/queryData", queryData);
 router.put("/updateStudent", updateStudent);
@@ -24,5 +22,4 @@ router.put("/addNewField", addNewField);
 router.put("/result", addResult);
 router.get("/result", getResult);
 
-// export default router;
-module.exports =(router)
+module.exports = router;
