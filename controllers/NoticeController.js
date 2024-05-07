@@ -13,10 +13,11 @@ const projection = {
 const getNotices = async (req, res) => {
   try {
     const query = req.query;
-    const notices = await Notices.find(query, projection).populate(
-      "course",
-      projection
-    );
+    const notices = await Notices.find(query, projection)
+      .sort({
+        date: -1,
+      })
+      .populate("course", projection);
     res.status(200).json(notices);
   } catch (err) {
     res.status(404).json({ message: err.message });

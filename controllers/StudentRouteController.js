@@ -17,6 +17,7 @@ const projection = {
   clgName: 1,
   clgPYear: 1,
   schoolName: 1,
+  educationalBackground: 1,
   schoolPYear: 1,
   email: 1,
   phone_number: 1,
@@ -99,8 +100,11 @@ const updateStudent = async (req, res) => {
   try {
     const query = req.query;
     const newData = await req.body;
-    const student = await Students.updateOne(query, {
-      $set: newData,
+    // const student = await Students.updateOne(query, {
+    //   $set: newData,
+    // });
+    const student = await Students.findByIdAndUpdate(query.id, newData, {
+      new: true,
     });
     res.status(200).json(student);
   } catch (error) {

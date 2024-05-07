@@ -6,6 +6,7 @@ const studentRoute = require("./routes/students.js");
 const courseRoute = require("./routes/courses.js");
 const notesRoute = require("./routes/notes.js");
 const noticeRoute = require("./routes/notices.js");
+const tutorialRoute = require("./routes/tutorial.js");
 // import dotenv from "dotenv";
 const dotenv = require("dotenv");
 const sendNotice = require("./utility/SendMails.js");
@@ -34,6 +35,7 @@ app.use("/api/v1/students", studentRoute);
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/notes", notesRoute);
 app.use("/api/v1/notice", noticeRoute);
+app.use("/api/v1/tutorial", tutorialRoute);
 app.post("/admin/sendNotice", async (req, res) => {
   try {
     const { info, emails } = req.body;

@@ -2,10 +2,9 @@
   "name": "mserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "build": "netlify deploy --prod"
   },
   "author": "Ahsanul Hoque",
   "license": "ISC",
@@ -15,6 +14,9 @@
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "mongoose": "^8.3.3",
-    "nodemailer": "^6.9.13"
+    "netlify-cli": "^17.23.1",
+    "netlify-lambda": "^2.0.16",
+    "nodemailer": "^6.9.13",
+    "serverless-http": "^3.2.0"
   }
 }

@@ -1,6 +1,12 @@
 const notes = require("../models/Notes.js");
 const courses = require("../models/courseHistory.js");
 
+const projection = {
+  __v: 0,
+  createdAt: 0,
+  updatedAt: 0,
+};
+
 const addNotes = async (req, res) => {
   try {
     const note = new notes(req.body);
@@ -28,7 +34,6 @@ const getNotes = async (req, res) => {
         query,
         {
           __v: 0,
-          _id: 0,
           createdAt: 0,
           updatedAt: 0,
           courseName: 0,
@@ -59,7 +64,9 @@ const updateNotes = async (req, res) => {
   try {
     const query = req.query;
     const update = req.body;
-    const note = await notes.findByIdAndUpdate(query.id, update, { new: true });
+    const note = await notes.findByIdAndUpdate(query.id, update, {
+      new: true,
+    });
     if (!note) throw Error("Note not found");
     res.status(200).json({
       message: "Note Updated Successfully",

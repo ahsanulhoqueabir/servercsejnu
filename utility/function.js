@@ -16,5 +16,12 @@ const Randomposition = () => {
 
   return list[value];
 };
+
+const dateConvert = (date) => {
+  let d = new Date(date);
+  return d.toDateString();
+};
+
+
 module.exports = { randomColor, Randomposition };
 // export default { randomColor };

@@ -9,7 +9,7 @@ const sendNotice = ({ details }) => {
     secure: false,
     auth: {
       user: "cr.csejnu@gmail.com",
-      pass: process.env.EMAIl_PASS,
+      pass: "yphtxlesuahbikcg",
     },
     tls: {
       rejectUnauthorized: false,
@@ -48,9 +48,9 @@ const sendNotice = ({ details }) => {
   };
   transporter.sendMail(options, (err, info) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
-      console.log(info);
+      // console.log(info);
     }
   });
 };

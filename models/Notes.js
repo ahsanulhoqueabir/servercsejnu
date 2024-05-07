@@ -3,6 +3,7 @@ const noteSchema = new mongoose.Schema(
   {
     author: { type: String },
     id: { type: String },
+    title: { type: String },
     topic: { type: String },
     link: { type: String },
     code: { type: String },
