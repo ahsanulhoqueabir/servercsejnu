@@ -6,11 +6,12 @@ const {
   updateNotes,
   deleteNote,
 } = require("../controllers/NotesController.js");
+const { verifyJWT } = require("../middleware/middleware.js");
 const router = express.Router();
 
-router.post("/add", addNotes);
-router.get("/", getNotes);
-router.put("/update", updateNotes);
-router.delete("/delete", deleteNote);
+router.post("/add", verifyJWT, addNotes);
+router.get("/", verifyJWT, getNotes);
+router.put("/update", verifyJWT, updateNotes);
+router.delete("/delete", verifyJWT, deleteNote);
 
 module.exports = router;

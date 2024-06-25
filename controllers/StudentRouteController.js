@@ -1,7 +1,10 @@
-// import Students from "../models/Student.js";
+const { socailPlatforms, codingPlatforms } = require("../data/site.js");
 const Students = require("../models/Student.js");
 const projection = {
   id: 1,
+  social: 1,
+  codingProfile: 1,
+  education: 1,
   nickname: 1,
   name: 1,
   description: 1,
@@ -64,9 +67,12 @@ const BasicInfo = async (req, res) => {
       name: 1,
       nickname: 1,
       id: 1,
+      role: 1,
     };
     const query = req.query;
-    const students = await Students.find(query, projection);
+    const students = await Students.find(query, projection).sort({
+      id: 1,
+    });
     res.status(200).json(students);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -82,6 +88,11 @@ const getSortedData = async (req, res) => {
     options[sort_by] = sort_order === "asc" ? 1 : -1;
 
     const students = await Students.find(query, projection).sort(options);
+    students.map((student) => {
+      if (student.education && Array.isArray(student.education)) {
+        student.education.sort((a, b) => b.passingYear - a.passingYear);
+      }
+    });
     res.status(200).json(students);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -90,7 +101,20 @@ const getSortedData = async (req, res) => {
 const queryData = async (req, res) => {
   try {
     const query = req.query;
-    const students = await Students.find(query, projection);
+    const students = await Students.find(query, projection).populate({
+      path: "results",
+      select: "-createdAt -updatedAt -__v -student -studentId",
+      populate: {
+        path: "results.course",
+        select: "",
+      },
+    });
+    students.map((student) => {
+      if (student.education && Array.isArray(student.education)) {
+        student.education.sort((a, b) => b.passingYear - a.passingYear);
+      }
+    });
+
     res.status(200).json(students);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -100,10 +124,8 @@ const updateStudent = async (req, res) => {
   try {
     const query = req.query;
     const newData = await req.body;
-    // const student = await Students.updateOne(query, {
-    //   $set: newData,
-    // });
-    const student = await Students.findByIdAndUpdate(query.id, newData, {
+
+    const student = await Students.updateOne({ email: query.email }, newData, {
       new: true,
     });
     res.status(200).json(student);
@@ -128,6 +150,25 @@ const addNewField = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+const updateSpecificField = async (req, res) => {
+  try {
+    const { id, field, value } = req.query;
+    const student = await Students.findByIdAndUpdate(
+      id,
+      {
+        $set: {
+          [field]: value,
+        },
+      },
+      {
+        new: true,
+      }
+    );
+    res.status(200).json(student);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 const addResult = async (req, res) => {
   try {
     const query = req.query;
@@ -146,8 +187,71 @@ const addResult = async (req, res) => {
 const getResult = async (req, res) => {
   try {
     const query = req.query;
-    const student = await Students.find(query, { results: 1 });
+    const student = await Students.find(query, { id: 1, results: 1 }).populate({
+      path: "results",
+      select: "-createdAt -updatedAt -__v -student -studentId",
+      populate: {
+        path: "results.course",
+      },
+    });
     res.status(200).json(student);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+const deleteField = async (req, res) => {
+  try {
+    await Students.updateMany(
+      {},
+      {
+        $unset: {
+          results: [],
+        },
+      }
+    );
+
+    res.status(200).json({
+      message: ` deleted successfully`,
+    });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+const modifyData = async (req, res) => {
+  try {
+    const students = await Students.find();
+
+    students.map(async (student) => {
+      const social = [];
+      const codingProfile = [];
+      socailPlatforms.map((item) => {
+        if (student[item] && student[item] !== "") {
+          social.push({
+            platform: item,
+            link: student[item],
+          });
+        }
+      });
+      codingPlatforms.map((item) => {
+        if (student[item] && student[item] !== "") {
+          codingProfile.push({
+            platform: item,
+            handle: student[item],
+          });
+        }
+      });
+
+      student.social = social;
+      student.codingProfile = codingProfile;
+      await student.save();
+    });
+
+    res.status(200).json({
+      message: ` modified successfully`,
+      // length: cursor.length,
+      data: students,
+    });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
@@ -163,4 +267,7 @@ module.exports = {
   addNewField,
   addResult,
   getResult,
+  updateSpecificField,
+  deleteField,
+  modifyData,
 };

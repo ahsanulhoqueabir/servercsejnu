@@ -7,12 +7,13 @@ const {
   updateNotice,
   deleteNotice,
 } = require("../controllers/NoticeController.js");
+const { verifyJWT, verifyAdmin } = require("../middleware/middleware.js");
 
 const router = express.Router();
 router.get("/", getNotices);
-router.post("/add", addNotice);
+router.post("/add", verifyJWT, verifyAdmin, addNotice);
 router.get("/upcoming", upcomingNotice);
 router.put("/update", updateNotice);
-router.delete("/delete", deleteNotice);
+router.delete("/delete", verifyJWT, verifyAdmin, deleteNotice);
 
 module.exports = router;
